@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :memberships
+  has_many :groups, through: :memberships
+
   validates :name, presence: true
 
   def first_name

@@ -1,6 +1,9 @@
 class Group < ApplicationRecord
   has_many :events
 
+  has_many :memberships
+  has_many :users, through: :memberships
+
   validate :is_city_titlecase
 
   before_validation :make_city_titlecase
