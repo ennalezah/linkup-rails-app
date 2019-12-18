@@ -1,0 +1,9 @@
+<div class="content">
+  <%= simple_form_for @group do |f| %>
+    <%= f.input :name, required: true, autofocus: true %>
+    <%= f.input :description, as: :text, required: true %>
+    <%= f.input :city, required: true %>
+    <%= f.input :state, required: true %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
