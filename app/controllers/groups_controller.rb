@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index 
     @groups = Group.all
@@ -16,8 +17,10 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
+      flash[:notice] = "You've successfully created a new group"
       redirect_to group_path(@group)
     else
+      flash[:alert] = "There were some errors on your form"
       render 'new'
     end
   end

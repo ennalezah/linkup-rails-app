@@ -10,12 +10,17 @@
   </head>
 
   <body>
-    
-    <p class="alert alert-success"><%= notice if notice%></p>
-    <p class="alert alert-danger"><%= alert if alert %></p>
 
     <%= render 'layouts/navbar' %>
 
-    <%= yield %>
+    
+
+    <section class="section">
+      <div class="container">
+        <p class="alert alert-success"><%= notice if notice%></p>
+        <p class="alert alert-danger"><%= alert if alert %></p>
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>
