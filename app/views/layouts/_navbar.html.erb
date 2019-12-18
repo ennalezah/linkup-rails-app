@@ -46,9 +46,8 @@
           </div>
         <% else %>
           <div class="buttons">                
-            <li class="button is-small is-rounded is-info is-light"><%= link_to 'Log In', new_user_session_path, class: "has-text-grey-dark has-text-weight-medium" %></li>
-            <!-- <li class="button google"><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></li> -->
-            <li class="button is-small is-rounded cta"><%= link_to 'Sign Up', new_user_registration_path, class: "has-text-white has-text-weight-bold" %></li>
+            <li class="button is-small is-rounded is-info is-light"><%= link_to 'Log In', new_user_session_path, class: "has-text-grey-dark" %></li>
+            <li class="button is-small is-rounded is-primary is-light"><%= link_to 'Sign Up', new_user_registration_path, class: "has-text-grey-dark has-text-weight-bold" %></li>
           </div>
         <% end %>
       </div> <!-- end of navbar-end --> 
