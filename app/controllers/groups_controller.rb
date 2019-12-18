@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
       redirect_to group_path(@group)
     else
       flash[:alert] = "There were some errors on your form"
-      render 'new'
+      render :new
     end
   end
 
@@ -36,7 +36,7 @@ class GroupsController < ApplicationController
       redirect_to group_path(@group)
     else
       flash[:alert] = "There were some errors updating your group"
-      render 'edit'
+      render :edit
     end
   end
 
