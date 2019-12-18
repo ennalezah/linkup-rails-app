@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    params[:group_id] ? (@event = Event.new(group_id: params[:group_id])) : (@event = Event.new)
   end
 
   def create
@@ -53,5 +53,8 @@ class EventsController < ApplicationController
 
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def set_event_group
     end
 end

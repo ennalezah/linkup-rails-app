@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @events = @group.events
   end
 
   def new

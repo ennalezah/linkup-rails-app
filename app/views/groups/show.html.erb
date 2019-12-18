@@ -2,7 +2,14 @@
   <h1><%= @group.name %></h1>
   <p><%= @group.description %></p>
 
-  <p><%= link_to 'Edit', edit_group_path(@group) %> | <%= link_to 'Delete', group_path(@group), method: :delete, data: { confirm: "Are you sure you want to delete this group?" } %></p>
+  <h3>Upcoming Events</h3>
+  <% @events.each do |event| %>
+    <%= link_to event.name, group_event_path(@group, event) %>
+  <% end %>
+
+  <hr>
+
+  <p><%= link_to 'Add Event', new_group_event_path(@group) %> | <%= link_to 'Edit', edit_group_path(@group) %> | <%= link_to 'Delete', group_path(@group), method: :delete, data: { confirm: "Are you sure you want to delete this group?" } %></p>
 
 
 
