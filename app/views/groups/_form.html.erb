@@ -3,7 +3,7 @@
     <%= f.input :name, required: true, autofocus: true %>
     <%= f.input :description, as: :text, required: true %>
     <%= f.input :city, required: true %>
-    <%= f.input :state, required: true %>
+    <%= f.input_field :state, collection: states, required: true, prompt: 'State' %>
     <%= f.hidden_field :creator %>
     <%= f.button :submit %>
   <% end %>

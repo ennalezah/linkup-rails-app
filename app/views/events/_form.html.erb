@@ -6,7 +6,7 @@
     <%= f.input :end_date, required: true, label: 'End date and time' %>
     <%= f.input :location, required: true, label: 'Address or location name' %>
     <%= f.input :city, required: true %>
-    <%= f.input :state, required: true %>
+    <%= f.input_field :state, collection: states, required: true, prompt: 'State' %>
     <%= f.input_field :group_id, collection: Group.all, required: true, prompt: 'Select hosting group' %>
     <%= f.button :submit %>
   <% end %>

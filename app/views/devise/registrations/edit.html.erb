@@ -9,7 +9,7 @@
 
     <%= f.input :city, required: false %>
 
-    <%= f.input :state, required: false %>
+    <%= f.input_field :state, collection: states, required: true, prompt: 'State' %>
 
     <%= f.input :email, required: true %>
 
