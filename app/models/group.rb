@@ -1,4 +1,6 @@
 class Group < ApplicationRecord
+  has_many :events
+  
   before_validation :make_city_titlecase
 
   validates :name, :description, :city, :state, presence: { message: "Cannot be left blank" } 
