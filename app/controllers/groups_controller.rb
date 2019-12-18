@@ -29,9 +29,20 @@ class GroupsController < ApplicationController
   end
 
   def update
+    @group.update(group_params)
+
+    if @group.save
+      flash[:notice] = "You've successfully updated your group"
+      redirect_to group_path(@group)
+    else
+      flash[:alert] = "There were some errors updating your group"
+      render 'new'
+    end
   end
 
   def destroy
+    @group.destroy
+    redirect_to groups_path
   end
 
   private
