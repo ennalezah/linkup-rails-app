@@ -1,13 +1,13 @@
 <div class="content">
   <%= simple_form_for @event do |f| %>
-    <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :details, as: :text, required: true %>
+    <%= f.input :name, required: true, autofocus: true, label: 'Event name' %>
+    <%= f.input :details, as: :text, required: true, placeholder: 'Add important event info here that you think members should know about' %>
     <%= f.input :start_date, required: true, label: 'Start date and time' %>
     <%= f.input :end_date, required: true, label: 'End date and time' %>
     <%= f.input :location, required: true, label: 'Address or location name' %>
     <%= f.input :city, required: true %>
     <%= f.input_field :state, collection: states, required: true, prompt: 'State' %>
     <%= f.input_field :group_id, collection: Group.all, required: true, prompt: 'Select hosting group' %>
-    <%= f.button :submit %>
+    <%= f.submit (@event.new_record? ? 'Submit' : 'Update') %>
   <% end %>
 </div>
