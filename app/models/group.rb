@@ -1,15 +1,13 @@
 class Group < ApplicationRecord
+  ## Associations
   has_many :events
-
   has_many :memberships
   has_many :users, through: :memberships
 
+  ## Validations
   validate :is_city_titlecase
-
-  before_validation :make_city_titlecase
-  
+  before_validation :make_city_titlecase  
   validates :name, :description, :city, :state, presence: { message: "Cannot be left blank" } 
-
   validates :city, format: { with: /\A[A-Za-z\s\-\'\.]+\z/, message: "Cannot contain numbers or special characters" }
 
   private 
