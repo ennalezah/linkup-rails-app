@@ -24,9 +24,3 @@ module GroupsHelper
     true if user_signed_in? && (group.creator == current_user.name)
   end
 end
-
-
-# <% if user_signed_in? %>
-#   <h3>Join Our Group</h3>
-#   <%= render 'memberships/form', membership: @membership %>
-# <% end %>
