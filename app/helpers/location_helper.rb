@@ -1,4 +1,8 @@
-module StatesHelper
+module LocationHelper
+  def city_state(resource)
+    "#{resource.city}, #{resource.state}"
+  end
+
   def states
     ["Alabama",
     "Alaska",

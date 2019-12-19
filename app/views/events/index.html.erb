@@ -4,6 +4,6 @@
     <p><%= event.details %></p>
     <p><%= event.start_date %></p>
     <p><%= event.end_date %></p>
-    <p><%= event.location %> | <%= event.city %>, <%= event.state %></p>
+    <p><%= event.location %> | <%= city_state(event) %></p>
   <% end %>
 </div>

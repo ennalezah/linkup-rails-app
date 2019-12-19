@@ -1,6 +1,7 @@
 <div class="content">
   <h1><%= @group.name %></h1>
   <p><%= @group.description %></p>
+  <p><%= city_state(@group) %></p>
 
   <h3>Upcoming Events</h3>
   <% @events.each do |event| %>

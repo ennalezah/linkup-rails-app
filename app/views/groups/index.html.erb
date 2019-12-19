@@ -2,5 +2,6 @@
   <% @groups.each do |group| %>
     <h3><%= link_to group.name, group_path(group) %></h3>
     <p><%= group.description %></p>
+    <p><%= city_state(group) %></p>
   <% end %>
 </div>
