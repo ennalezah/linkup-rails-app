@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show 
+    @upcoming = @event.upcoming
   end
 
   def new

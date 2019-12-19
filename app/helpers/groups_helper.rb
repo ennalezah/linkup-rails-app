@@ -21,13 +21,15 @@ module GroupsHelper
   # end
 
   def become_member(group)
-    @current_membership = Membership.find_by(user_id: current_user.id, group_id: group.id)
+    if user_signed_in?
+      @current_membership = Membership.find_by(user_id: current_user.id, group_id: group.id)
 
-    if @current_membership || is_creator(group)
-      "&nbsp;".html_safe
-    else 
-      @membership = Membership.new(user_id: current_user.id, group_id: group.id)
-      "<h3>Join Us</h3><br>".html_safe + (render 'memberships/form', membership: @membership)
+      if @current_membership || is_creator(group)
+        "&nbsp;".html_safe
+      else 
+        @membership = Membership.new(user_id: current_user.id, group_id: group.id)
+        "<h3>Join Us</h3><br>".html_safe + (render 'memberships/form', membership: @membership)
+      end
     end
   end
 
