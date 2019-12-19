@@ -10,7 +10,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    params[:group_id] ? (@event = Event.new(group_id: params[:group_id])) : (@event = Event.new)
+    if params[:group_id]
+      @event = Event.new(organizer: current_user.id, group_id: params[:group_id])
+    else 
+      @event = Event.new
+    end
   end
 
   def create
@@ -48,13 +52,10 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :details, :start_date, :end_date, :location, :city, :state, :group_id)
+      params.require(:event).permit(:name, :details, :start_date, :end_date, :location, :city, :state, :organizer, :group_id)
     end
 
     def set_event
       @event = Event.find(params[:id])
-    end
-
-    def set_event_group
     end
 end
