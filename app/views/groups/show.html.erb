@@ -10,9 +10,9 @@
 <h3>Our Members</h3>
 <% @users.each do |user| %>
   <%= link_to user.name, user_path(user) %>
-<% end %>
+<% end %>  
 
-<h3>Join Our Group</h3>
+<%= become_member(@group) if user_signed_in? %>
 
 
 <%= creator_options(@group) %>

@@ -1,10 +1,32 @@
 module GroupsHelper
   def creator_options(group)
-    if user_signed_in? && group.creator == current_user.name
+    if is_creator(group)
       "<hr>".html_safe +
       (link_to 'Add Event', new_group_event_path(group), class: 'button is-small') + " " +
       (link_to 'Edit', edit_group_path(group), class: 'button is-small is-light is-link') + " " +
-      (link_to 'Delete', group_path(group), method: :delete, data: { confirm: "Are you sure you want to delete this group?" }, class: 'button is-small is-light is-danger')
+      (link_to 'Delete', group_path(group), method: :delete, data: { confirm: "Are you sure you want to delete #{group.name}?" }, class: 'button is-small is-light is-danger')
     end
   end
+
+  def become_member(group)
+    @current_membership = Membership.find_by(user_id: current_user.id, group_id: group.id)
+
+    if @current_membership
+      "<hr>".html_safe +
+      (link_to 'Leave group', membership_path(@current_membership), method: :delete, data: { confirm: "Are you sure you want to leave #{group.name}?" }, class: 'button is-small is-danger is-light')
+    else 
+      @membership = Membership.new(user_id: current_user.id, group_id: group.id)
+      "<h3>Join Us</h3><br>".html_safe + (render 'memberships/form', membership: @membership)
+    end
+  end
+
+  def is_creator(group)
+    true if user_signed_in? && (group.creator == current_user.name)
+  end
 end
+
+
+# <% if user_signed_in? %>
+#   <h3>Join Our Group</h3>
+#   <%= render 'memberships/form', membership: @membership %>
+# <% end %>

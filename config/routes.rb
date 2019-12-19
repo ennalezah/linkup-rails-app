@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :memberships, only: [:index, :show]
-  
+  resources :memberships
+
   resources :users, only: [:show]
 
   resources :events
