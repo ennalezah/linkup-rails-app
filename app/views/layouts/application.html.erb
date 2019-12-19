@@ -14,9 +14,10 @@
     <%= render 'shared/navbar' %>    
 
     <section class="section">
-      <div class="container">
+      <div class="content container">
         <p class="alert alert-success"><%= notice if notice%></p>
         <p class="alert alert-danger"><%= alert if alert %></p>
+
         <%= yield %>
       </div>
     </section>

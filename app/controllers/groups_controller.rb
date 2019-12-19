@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_creator, only: [:edit, :update, :destroy]
 
   def index 
     @groups = Group.all
@@ -8,6 +9,7 @@ class GroupsController < ApplicationController
 
   def show
     @events = @group.events
+    @users = @group.users
   end
 
   def new
@@ -18,6 +20,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
+      @group.users << current_user
       flash[:notice] = "You've successfully created a new group"
       redirect_to group_path(@group)
     else
@@ -54,5 +57,12 @@ class GroupsController < ApplicationController
 
     def set_group
       @group = Group.find(params[:id])
+    end
+
+    def require_creator
+      if user_signed_in? && (@group.creator != current_user.name)
+        flash[:alert] = "You don't have permission to view that page"
+        redirect_to root_path
+      end
     end
 end
