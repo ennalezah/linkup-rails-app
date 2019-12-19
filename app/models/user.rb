@@ -14,10 +14,6 @@ class User < ApplicationRecord
   ## Validations
   validates :name, presence: true
 
-
-  ## Model Helpers
-
-
   private
 
     ## OmniAuth Google - called in controllers/users/omniauth_callbacks_controller.rb
