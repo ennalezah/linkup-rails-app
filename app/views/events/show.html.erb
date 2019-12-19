@@ -1,11 +1,9 @@
-<div class="content">
-  <h3><%= @event.name %></h3>
-  <p><%= @event.details %></p>
-  <p><%= @event.start_date %></p>
-  <p><%= @event.end_date %></p>
-  <p><%= @event.location %> | <%= city_state(@event) %></p>
-  <p>Organizer: <%= organizer_name(@event) %></p>
+<h3><%= @event.name %></h3>
+<p><%= @event.details %></p>
+<p><%= @event.start_date %></p>
+<p><%= @event.end_date %></p>
+<p><%= @event.location %> | <%= city_state(@event) %></p>
+<p>Organizer: <%= organizer_name(@event) %></p>
 
 
-  <%= organizer_options(@event) %>
-</div>
+<%= organizer_options(@event) %>
