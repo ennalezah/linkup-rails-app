@@ -2,16 +2,17 @@
 <p><%= @group.description %></p>
 <p><%= city_state(@group) %></p>
 
-<h3>Our Members</h3>
-<% @users.each do |user| %>
-  <%= link_to user.name, user_path(user) %>
-<% end %>
-
 <h3>Upcoming Events</h3>
 <% @events.each do |event| %>
   <%= link_to event.name, group_event_path(@group, event) %>
 <% end %>
 
-<%= creator_options(@group) %>
+<h3>Our Members</h3>
+<% @users.each do |user| %>
+  <%= link_to user.name, user_path(user) %>
+<% end %>
 
-<!-- <p><%= link_to 'Add Event', new_group_event_path(@group) %> | <%= link_to 'Edit', edit_group_path(@group) %> | <%= link_to 'Delete', group_path(@group), method: :delete, data: { confirm: "Are you sure you want to delete this group?" } %></p> -->
+<h3>Join Our Group</h3>
+
+
+<%= creator_options(@group) %>

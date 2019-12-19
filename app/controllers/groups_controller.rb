@@ -21,10 +21,9 @@ class GroupsController < ApplicationController
 
     if @group.save
       @group.users << current_user
-      flash[:notice] = "You've successfully created a new group"
       redirect_to group_path(@group)
     else
-      flash[:alert] = "There were some errors on your form"
+      flash[:alert] = "There were some errors on your form. Review the messages below:"
       render :new
     end
   end
@@ -36,7 +35,6 @@ class GroupsController < ApplicationController
     @group.update(group_params)
 
     if @group.save
-      flash[:notice] = "You've successfully updated your group"
       redirect_to group_path(@group)
     else
       flash[:alert] = "There were some errors updating your group"
