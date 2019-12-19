@@ -1,10 +1,8 @@
-<div class="content">
-  <%= simple_form_for group do |f| %>
-    <%= f.input :name, required: true, autofocus: true, label: 'Group name' %>
-    <%= f.input :description, as: :text, required: true, placeholder: 'A brief intro about your group' %>
-    <%= f.input :city, required: true %>
-    <%= f.input_field :state, collection: states, required: true, prompt: 'State' %>
-    <%= f.hidden_field :creator %>
-    <%= f.submit (group.new_record? ? 'Submit' : 'Update') %>
-  <% end %>
-</div>
+<%= simple_form_for group do |f| %>
+  <%= f.input :name, required: true, autofocus: true, label: 'Group name' %>
+  <%= f.input :description, as: :text, required: true, placeholder: 'A brief intro about your group' %>
+  <%= f.input :city, required: true %>
+  <%= f.input_field :state, collection: states, required: true, prompt: 'State' %>
+  <%= f.hidden_field :creator %>
+  <%= f.submit %>
+<% end %>
