@@ -4,18 +4,32 @@
               autofocus: true,
               label: 'Event name' %>
 
+  <%= f.input_field :group_id,
+                    collection: Group.all,
+                    required: true,
+                    prompt: 'Select hosting group' %>
+
+  <%= f.input_field :organizer,
+                    collection: User.all,
+                    required: true,
+                    prompt: 'Select event organizer' %>
+
   <%= f.input :details,
               as: :text,
               required: true,
               placeholder: 'Add event info here that you think members should know about' %>
 
-  <%= f.input :start_date,
+  <%= f.input :date,
               required: true,
-              label: 'Start date and time' %>
+              label: 'Date' %>
 
-  <%= f.input :end_date,
+  <%= f.input :start_time,
               required: true,
-              label: 'End date and time' %>
+              label: 'Start time (24-hr format)' %>
+
+  <%= f.input :end_time,
+              required: true,
+              label: 'End time (24-hr format)' %>
 
   <%= f.input :location,
               required: true,
@@ -28,16 +42,6 @@
                     collection: states,
                     required: true,
                     prompt: 'State' %>
-
-  <%= f.input_field :group_id,
-                    collection: Group.all,
-                    required: true,
-                    prompt: 'Select hosting group' %>
-
-  <%= f.input_field :organizer,
-                    collection: User.all,
-                    required: true,
-                    prompt: 'Select event organizer' %>
 
   <%= f.submit %>
 <% end %>

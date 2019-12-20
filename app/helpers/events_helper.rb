@@ -16,23 +16,19 @@ module EventsHelper
     end
   end
 
-  def start_date(event)
-    event.start_date.strftime("%A, %B %e, %Y")
+  def date(event)
+    event.date.strftime("%A, %B %e, %Y")
   end
 
   def start_time(event)
-    event.start_date.strftime("%l:%M %P")
-  end
-
-  def end_date(event)
-    event.end_date.strftime("%B %e, %Y")
+    event.start_time.strftime("%l:%M %P")
   end
 
   def end_time(event)
-    event.end_date.strftime("%l:%M %P")
+    event.end_time.strftime("%l:%M %P")
   end
 
   def start_end_time(event)
-    "#{start_time(event)} - #{start_time(event)}"
+    "#{start_time(event)} - #{end_time(event)}"
   end
 end

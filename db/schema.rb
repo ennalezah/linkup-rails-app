@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_130917) do
+ActiveRecord::Schema.define(version: 2019_12_20_030423) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "details"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "date"
+    t.time "end_time"
     t.string "location"
     t.string "city"
     t.string "state"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_130917) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "organizer"
+    t.time "start_time"
     t.index ["group_id"], name: "index_events_on_group_id"
   end
 
