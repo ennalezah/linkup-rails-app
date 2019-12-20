@@ -21,11 +21,13 @@ module EventsHelper
   end
 
   def start_time(event)
-    event.start_time.strftime("%l:%M %P")
+    event.try(:start_time).try(:strftime, ("%l:%M %P"))
+    # event.start_time.strftime("%l:%M %P")
   end
 
   def end_time(event)
-    event.end_time.strftime("%l:%M %P")
+    event.try(:end_time).try(:strftime, ("%l:%M %P"))
+    # event.end_time.strftime("%l:%M %P")
   end
 
   def start_end_time(event)

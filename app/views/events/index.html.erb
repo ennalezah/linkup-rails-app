@@ -1,7 +1,7 @@
 <% @events.each do |event| %>
   <h3><%= link_to event.name, event_path(event) %></h3>
   <p><%= event.details %></p>
-  <p><%= event.start_date %></p>
-  <p><%= event.end_date %></p>
+  <p><%= date(event) %></p>
+  <p><%= start_end_time(event) %></p>
   <p><%= event.location %> | <%= city_state(event) %></p>
 <% end %>
