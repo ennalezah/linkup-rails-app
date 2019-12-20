@@ -1,8 +1,7 @@
 <%= simple_form_for membership, url: memberships_path, method: :post do |f| %>
   <%= f.input :interests, as: :text,
-              required: true,
               autofocus: true,
-              label: 'What kind of topics would you like to discuss at events?' %>
+              label: 'What topics would you like to discuss at events? (optional)' %>
 
   <%= f.hidden_field :user_id %>
 

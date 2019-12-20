@@ -12,7 +12,6 @@ class Event < ApplicationRecord
 
   ## Validations
   validates :name, :details, :date, :start_time, :end_time, :location, :city, :state, presence: { message: "Cannot be left blank" }
-  validate :is_city_titlecase
   before_validation :make_city_titlecase
   # validates :city, format: { with: /[A-Za-z\-\'\.]+/x, message: "Cannot contain numbers or special characters" }
 
@@ -24,7 +23,7 @@ class Event < ApplicationRecord
     #   end
     # end
 
-    # def make_city_titlecase
-    #   self.city = self.city.titlecase
-    # end
+    def make_city_titlecase
+      self.city = self.city.titlecase
+    end
 end
