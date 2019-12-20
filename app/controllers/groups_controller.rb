@@ -8,9 +8,8 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @events = @group.events.upcoming
+    @events = @group.events
     @users = @group.users
-
   end
 
   def new

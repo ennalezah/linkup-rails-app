@@ -1,7 +1,7 @@
 <h3><%= @event.name %></h3>
 <p><%= @event.details %></p>
-<p><%= @event.start_date %></p>
-<p><%= @event.end_date %></p>
+<p><%= start_date(@event) %></p>
+<p><%= start_end_time(@event) %></p>
 <p><%= @event.location %> | <%= city_state(@event) %></p>
 <p>Organizer: <%= organizer_name(@event) %></p>
 

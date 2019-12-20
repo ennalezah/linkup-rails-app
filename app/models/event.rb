@@ -9,10 +9,6 @@ class Event < ApplicationRecord
 
   # validates :city, format: { with: /[A-Za-z\-\'\.]+/x, message: "Cannot contain numbers or special characters" }
 
-  def upcoming
-    where("date > Time.now")
-  end
-
   private 
   
     # def is_city_titlecase
