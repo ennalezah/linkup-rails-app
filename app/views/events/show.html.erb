@@ -5,5 +5,13 @@
 <p><%= @event.location %> | <%= city_state(@event) %></p>
 <p>Organizer: <%= organizer_name(@event) %></p>
 
+<hr>
+
+<h3><%= pluralize(@users.count, 'Attendee')%></h3>
+<% @users.each do |user| %>
+  <%= link_to user.name, user_path(user) %>
+<% end %>
+
+<%= rsvp(@event) %>
 
 <%= organizer_options(@event) %>

@@ -33,4 +33,17 @@ module EventsHelper
   def start_end_time(event)
     "#{start_time(event)} - #{end_time(event)}"
   end
+
+  def rsvp(event)
+    if user_signed_in?
+      @current_attendance = Attendance.find_by(user_id: current_user.id, event_id: event.id)
+
+      if @current_attendance || is_organizer(event)
+        "&nbsp;".html_safe
+      else 
+        @attendance = Attendance.new(user_id: current_user.id, event_id: event.id)
+        "<br>".html_safe + (render 'attendances/form', attendance: @attendance)
+      end
+    end
+  end
 end
