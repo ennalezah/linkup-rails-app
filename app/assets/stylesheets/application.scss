@@ -1,17 +1,48 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import "bulma";
 
- @import "bulma";
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 960px;
+}
+
+a {
+  color: #3D9AE2;
+}
+
+a:hover, .navbar-item a:hover {
+  color: #ff595c;
+}
+
+.cta {
+  background: #3D9AE2;
+  border: none;
+}
+
+.cta:hover {
+  background: #1C2657;
+}
+
+/*** NAVBAR ****/
+.navbar {
+  background: #F8F8F8;
+}
+
+.logo, .navbar-item a {
+  color: #1C2657;
+}
+
+.fa-link {
+  color: #3D9AE2;
+  margin: 0 5px 0;
+}
+
+/*** HERO IMAGES ***/
+.home {
+  background: linear-gradient(0deg,rgba(255,255,255,0.35),rgba(255,255,255,0.35)), url(home.png) no-repeat center / cover;
+}
