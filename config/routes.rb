@@ -1,11 +1,11 @@
-Rails.application.routes.draw do
-
-  resources :attendances
+Rails.application.routes.draw do  
   resources :memberships
-
-  resources :users, only: [:show]
-
   resources :events
+  resources :attendances
+
+  resources :users, only: [:show] do
+    resources :events, only: [:index]
+  end 
 
   resources :groups do 
     resources :events, only: [:new, :show]

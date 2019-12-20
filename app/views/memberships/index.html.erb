@@ -1,6 +1,6 @@
 <% if @groups.empty? %>
   <h3>It doesn't look like you're a member of any groups yet.</h3>
-  <p>Visit the <%= link_to 'Explore Groups', groups_path %> page to find your crowd, and join them!</p>
+  <p>Visit the <%= link_to 'Explore Groups', groups_path %> page to find your crowd, and join them! You can also <%= link_to 'start a new group', new_group_path %>.</p>
 <% end %>
 
 <% @groups.each do |group| %>

@@ -5,3 +5,8 @@
   <p><%= start_end_time(event) %></p>
   <p><%= event.location %> | <%= city_state(event) %></p>
 <% end %>
+
+<% if @events.empty? %>
+  <h3>It doesn't look like you RSVP'd for any events yet.</h3>
+  <p>Visit the <%= link_to 'Find Events', events_path %> page to find upcoming events near you.</p>
+<% end %>
