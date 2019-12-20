@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :attendances
   resources :memberships
 
   resources :users, only: [:show]

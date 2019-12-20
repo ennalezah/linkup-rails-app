@@ -10,9 +10,13 @@ class User < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
 
+  has_many :attendances, dependent: :destroy
+  has_many :events, through: :attendances
+
 
   ## Validations
-  validates :name, presence: true
+  validates :name, :email, presence: true
+  validates :email, uniqueness: true
 
   private
 

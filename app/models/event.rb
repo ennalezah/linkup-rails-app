@@ -3,11 +3,11 @@ class Event < ApplicationRecord
 
   scope :with_upcoming_date, -> { where("start_date > #{Time.current}") }
 
-  # validate :is_city_titlecase
-
-  # before_validation :make_city_titlecase
-
   validates :name, :details, :date, :start_time, :end_time, :location, :city, :state, presence: { message: "Cannot be left blank" }
+
+  validate :is_city_titlecase
+
+  before_validation :make_city_titlecase
 
   # validates :city, format: { with: /[A-Za-z\-\'\.]+/x, message: "Cannot contain numbers or special characters" }
 
