@@ -5,7 +5,7 @@
         <h1 class="title is-size-1-desktop has-text-weight-bold has-text-dark">
           Connect with your kind of crowd
         </h1>
-        <h2 class="subtitle"><br><%= link_to 'SIGN UP', new_user_registration_path, class: "button cta is-medium has-text-white" if !current_user %></p>
+        <h2 class="subtitle"><br><%= link_to 'SIGN UP', new_user_registration_path, class: "button cta is-medium has-text-white" if !user_signed_in? %></p>
       </div>      
     </div>
   </div>
