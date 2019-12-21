@@ -11,6 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
   </head>
 
   <body>
@@ -25,5 +26,20 @@
         <%= yield %>
       </div>
     </section>
+
+
+
+    <script>
+      $(function() {
+        $('input[name="date"]').daterangepicker({
+          singleDatePicker: true,
+          showDropdowns: true,
+          minYear: 2019,
+          maxYear: parseInt(moment().format('YYYY'),10)
+        }, function(start, end, label) {
+          var years = moment().diff(start, 'years');
+        });
+      });
+    </script>
   </body>
 </html>

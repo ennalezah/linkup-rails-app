@@ -66,7 +66,8 @@
             </div>
           <% end %>
           
-          <p class="breaker is-size-7 is-spaced has-text-centered has-text-weight-bold">----- OR -----</p>
+          <%# <p class="breaker is-size-7 is-spaced has-text-centered has-text-weight-bold">----- OR -----</p> %>
+          <div class="is-divider" data-content="OR"></div>
 
           <button class="button is-fullwidth"><img src="https://img.icons8.com/color/100/000000/google-logo.png" width="22px" class="google-icon"><%= link_to "Sign up with Google", user_google_oauth2_omniauth_authorize_path %></button>
 

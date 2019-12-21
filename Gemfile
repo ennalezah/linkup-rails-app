@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'bulma-rails', '~> 0.8.0'
+gem 'bulma-extensions-rails', '~> 6.2', '>= 6.2.7'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
