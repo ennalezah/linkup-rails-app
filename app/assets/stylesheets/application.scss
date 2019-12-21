@@ -7,10 +7,21 @@ body, html {
   margin: 0;
   height: 100%;
   background-color: #f8f8f8;
+  box-shadow: 0 10px 15px -10px rgba(10, 14, 32, 0.12);
 }
 
 .container {
   max-width: 960px;
+  min-height: 55vh;
+}
+
+.page-block {
+  box-shadow: 0 10px 15px -10px rgba(10, 14, 32, 0.12);
+}
+
+.form-block {
+  background: rgba(255,255,255,0.90);
+  min-height: 100%;
 }
 
 a {
@@ -38,6 +49,14 @@ a:hover, .navbar-item a:hover, .notice {
   background-color: transparent;
 }
 
+.google-icon {
+  margin: 0 10px 0 0;
+}
+
+.breaker {
+  margin: 10px 0;
+}
+
 /*** NAVBAR ****/
 .navbar {
   background: #F8F8F8;
@@ -63,10 +82,5 @@ a:hover, .navbar-item a:hover, .notice {
 }
 
 .signup {
-  background: linear-gradient(0deg,rgba(255,255,255,0.75),rgba(255,255,255,0.35)), url(signup.png) no-repeat center / cover;
-}
-
-.form {
-  background: rgba(255,255,255,0.75);
-  // border: 1px solid rgba(0,0,0,0.3);
+  background: linear-gradient(0deg,rgba(255,255,255,0.55),rgba(255,255,255,0.35)), url(signup.png) no-repeat 35% 50% / cover;
 }
