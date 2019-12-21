@@ -46,4 +46,8 @@ module EventsHelper
       end
     end
   end
+
+  def upcoming(event)
+    event.date.future?
+  end
 end
