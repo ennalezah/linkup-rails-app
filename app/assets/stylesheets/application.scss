@@ -12,16 +12,18 @@ body, html {
 
 .container {
   max-width: 960px;
-  min-height: 55vh;
 }
 
 .page-block {
   box-shadow: 0 10px 15px -10px rgba(10, 14, 32, 0.12);
+  background: #fff;
+  min-height: 75vh;
+  padding: 50px;
 }
 
 .form-block {
   background: rgba(255,255,255,0.90);
-  min-height: 100%;
+  min-height: 55vh;
 }
 
 a {
@@ -78,9 +80,13 @@ a:hover, .navbar-item a:hover, .notice {
 
 /*** HERO IMAGES ***/
 .home {
-  background: linear-gradient(0deg,rgba(255,255,255,0.35),rgba(255,255,255,0.35)), url(home.png) no-repeat center / cover;
+  background: linear-gradient(0deg,rgba(255,255,255,0.50),rgba(255,255,255,0.50)), url(home.png) no-repeat center / cover;
 }
 
 .signup {
-  background: linear-gradient(0deg,rgba(255,255,255,0.55),rgba(255,255,255,0.35)), url(signup.png) no-repeat 35% 50% / cover;
+  background: linear-gradient(0deg,rgba(255,255,255,0.50),rgba(255,255,255,0.50)), url(signup.png) no-repeat 35% 50% / cover;
+}
+
+.login {
+  background: linear-gradient(0deg,rgba(255,255,255,0.50),rgba(255,255,255,0.50)), url(login.png) no-repeat center / cover;
 }
