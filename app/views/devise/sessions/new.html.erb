@@ -2,13 +2,11 @@
   <div class="hero-body login">
     <div class="container">
       <div class="columns is-vcentered">
-
         <div class="column if-4 is-offset-8 form-block">
-          <h4 class="title is-4 is-spaced has-text-bold">Welcome back!</h4>
-          <p class="subtitle is-7">Fields marked with <span class="notice">*</span> are required</p>
+          <h4 class="title is-4 is-spaced has-text-bold">Log in to your account</h4>
+          <p class="subtitle is-7 is-invisible">Fields marked with <span class="notice">*</span> are required</p>
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
             <div class="field">
               <label class="label">Email<span class="notice">*</span></label>
               <div class="control">
@@ -49,8 +47,6 @@
           <p class="breaker is-size-7 is-spaced has-text-centered has-text-weight-bold">----- OR -----</p>
 
           <button class="button is-fullwidth"><img src="https://img.icons8.com/color/100/000000/google-logo.png" width="22px" class="google-icon"><%= link_to "Log in with Google", user_google_oauth2_omniauth_authorize_path %></button>
-
-          <!-- <%= render "devise/shared/links" %> -->
         </div>
       </div> <!-- end of columns -->     
     </div> <!-- end of container -->  
