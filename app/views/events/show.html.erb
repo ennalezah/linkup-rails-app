@@ -1,17 +1,19 @@
-<h3><%= @event.name %></h3>
-<p><%= @event.details %></p>
-<p><%= date(@event) %></p>
-<p><%= start_end_time(@event) %></p>
-<p><%= @event.location %> | <%= city_state(@event) %></p>
-<p>Organizer: <%= organizer_name(@event) %></p>
+<div class="page-block">
+  <h3><%= @event.name %></h3>
+  <p><%= @event.details %></p>
+  <p><%= date(@event) %></p>
+  <p><%= start_end_time(@event) %></p>
+  <p><%= @event.location %> | <%= city_state(@event) %></p>
+  <p>Organizer: <%= organizer_name(@event) %></p>
 
-<hr>
+  <hr>
 
-<h3><%= pluralize(@users.count, 'Attendee')%></h3>
-<% @users.each do |user| %>
-  <%= link_to user.name, user_path(user) %>
-<% end %>
+  <h3><%= pluralize(@users.count, 'Attendee')%></h3>
+  <% @users.each do |user| %>
+    <%= link_to user.name, user_path(user) %>
+  <% end %>
 
-<%= rsvp(@event) %>
+  <%= rsvp(@event) %>
 
-<%= organizer_options(@event) %>
+  <%= organizer_options(@event) %>
+</div>
