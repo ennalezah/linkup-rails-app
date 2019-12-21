@@ -1,11 +1,21 @@
 <%= simple_form_for membership, url: memberships_path, method: :post do |f| %>
-  <%= f.input :interests, as: :text,
-              autofocus: true,
-              label: 'What topics would you like to discuss at events? (optional)' %>
-
   <%= f.hidden_field :user_id %>
-
   <%= f.hidden_field :group_id %>
 
-  <%= f.submit 'Join group' %>
+  <div class="field">
+    <label class="label">What topics would you like to discuss at events? (optional)</label>
+    <div class="control">
+      <%= f.input :interests,
+                  required: false,
+                  label: false,
+                  wrapper: false,
+                  input_html: { class: "textarea" } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.button :submit, 'Join group', class:'button cta has-text-white has-text-weight-medium' %>
+    </div>
+  </div>   
 <% end %>
