@@ -1,14 +1,39 @@
 <%= simple_form_for event do |f| %>
 
-<%= f.input_field :group_id,
-                    collection: Group.all,
-                    required: true,
-                    prompt: 'Select hosting group' %>
+  <div class="columns">
+    <div class="column"> 
+      <div class="field">
+        <label class="label">Hosting group<span class="notice">*</span></label>
+        <div class="control">
+          <span class="select">
+            <%= f.input_field :group_id,
+                        collection: Group.all,
+                        required: true,
+                        label: false,
+                        prompt: 'Select one' %>
+          </span>     
+        </div>
+      </div>
+    </div>
 
-  <%= f.input_field :organizer,
-                    collection: User.all,
-                    required: true,
-                    prompt: 'Select event organizer' %>
+    <div class="column">
+      <div class="field">
+        <label class="label">Event organizer<span class="notice">*</span></label>
+        <div class="control">
+          <span class="select">
+              <%= f.input_field :organizer,
+                        collection: User.all,
+                        required: true,
+                        label: false,
+                        wrapper: false,
+                        prompt: 'Select one' %>
+          </span>     
+        </div>
+      </div>  
+    </div> 
+
+    <div class="column"></div>
+  </div> <!-- end of columns -->
                     
 
   <div class="field">
@@ -34,41 +59,94 @@
     </div>
   </div>
 
-  <div class="field">
-    <label class="label">Date<span class="notice">*</span></label>
-  </div>
+  <div class="columns">
+    <div class="column"> 
+      <div class="field">
+        <label class="label">Address or location name<span class="notice">*</span></label>
+        <div class="control">
+          <%= f.input :location,
+                      required: true,
+                      label: false,
+                      wrapper: false,
+                      input_html: { class: "input" } %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
+    <div class="column">
+      <div class="field">
+        <label class="label">City<span class="notice">*</span></label>
+        <div class="control">
+          <%= f.input :city,
+                      required: true,
+                      label: false,
+                      wrapper: false,
+                      input_html: { class: "input" } %>
+        </div>
+      </div>  
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">State<span class="notice">*</span></label>
+        <div class="control">
+          <span class="select">
+            <%= f.input_field :state,
+                          collection: states,
+                          required: true,
+                          label: false,
+                          prompt: '' %>
+          </span>     
+        </div>
+      </div>
+    </div>  
+  </div> <!-- end of columns -->
+
+  <div class="columns">
+    <div class="column"> 
+      <div class="field">
+        <label class="label">Date<span class="notice">*</span></label>
+        <div class="control">
+          <%= f.input :date,
+                      required: true,
+                      label: false,
+                      wrapper: false,
+                      input_html: { class: "date select "} %>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">Start time (24-hr format)<span class="notice">*</span></label>    
+        <div class="control">
+          <%= f.input :start_time,
+                      required: true,
+                      label: false,
+                      wrapper: false,
+                      input_html: { class: "time select"} %>
+        </div>
+      </div>  
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">End time (24-hr format)<span class="notice">*</span></label>    
+        <div class="control">
+          <%= f.input :end_time,
+                      required: true,
+                      label: false,
+                      wrapper: false,
+                      input_html: { class: "time select"} %>
+        </div>
+      </div>
+    </div>  
+  </div> <!-- end of columns -->
+
+  <div class="field is-grouped">
     <div class="control">
-      <span class="select">
-        <%= f.input :date,
-                    required: true,
-                    label: false,
-                    wrapper: false,
-                    input_html: { class: "select" } %>
-      </span>
+      <%= f.submit (@event.new_record? ? 'Submit' : 'Update'), class:'button cta has-text-white has-text-weight-medium' %>
+      <%= link_to 'Cancel', events_path, class:'button is-light is-link' %>
     </div>
   </div>
-
-  <%= f.input :start_time,
-              required: true,
-              label: 'Start time (24-hr format)' %>
-
-  <%= f.input :end_time,
-              required: true,
-              label: 'End time (24-hr format)' %>
-
-  <%= f.input :location,
-              required: true,
-              label: 'Address or location name' %>
-
-  <%= f.input :city,
-              required: true %>
-
-  <%= f.input_field :state,
-                    collection: states,
-                    required: true,
-                    prompt: 'State' %>
-
-  <%= f.submit %>
 <% end %>
