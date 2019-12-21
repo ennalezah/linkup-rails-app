@@ -1,12 +1,26 @@
-<% @events.each do |event| %>
-  <h3><%= link_to event.name, event_path(event) %></h3>
-  <p><%= event.details %></p>
-  <p><%= date(event) %></p>
-  <p><%= start_end_time(event) %></p>
-  <p><%= event.location %> | <%= city_state(event) %></p>
-<% end %>
+<div class="page-block">
+  <h3 class="title is-3 has-text-weight-semibold">Find Events</h3><br>
 
-<% if @events.empty? %>
-  <h3>It doesn't look like you RSVP'd for any events yet.</h3>
-  <p>Visit the <%= link_to 'Find Events', events_path %> page to find upcoming events near you.</p>
-<% end %>
+  <%= @events.each do |event| %>    
+    <h5 class="title is-5 has-text-weight-bold"><%= link_to event.name, event_path(event) %></h5>
+
+    <div class="columns is-gapless subtitle is-size-7 has-text-weight-medium">      
+      <div class="column is-narrow">
+        <p>
+          <i class="fas fa-user-friends notice"></i><br>
+          <i class="far fa-calendar-alt notice"></i><br>
+          <i class="fas fa-map-marker-alt notice"></i>
+        </p>
+      </div>
+
+      <div class="column">
+        <p>
+          Hosted by <%= hosting_group(event) %><br>
+          <%= date(event) %> at <%= start_end_time(event) %><br>
+          <%= event.location %> | <%= city_state(event) %><br>
+        </p>        
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

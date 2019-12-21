@@ -16,6 +16,15 @@ module EventsHelper
     end
   end
 
+  def hosting_group(event)
+    @group = event.group
+    link_to @group.name, group_path(@group), class: 'has-text-weight-medium'
+  end
+
+  def upcoming(event)
+    event.date.future?
+  end
+
   def date(event)
     event.date.strftime("%A, %B %e, %Y")
   end
@@ -45,9 +54,5 @@ module EventsHelper
         "<br>".html_safe + (render 'attendances/form', attendance: @attendance)
       end
     end
-  end
-
-  def upcoming(event)
-    event.date.future?
   end
 end

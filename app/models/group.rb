@@ -7,7 +7,8 @@ class Group < ApplicationRecord
   ## Validations
   validate :is_city_titlecase
   before_validation :make_city_titlecase  
-  validates :name, :description, :city, :state, presence: { message: "Cannot be left blank" } 
+  validates :name, :description, :city, :state, presence: true
+  validates :name, uniqueness: true
   validates :city, format: { with: /\A[A-Za-z\s\-\'\.]+\z/, message: "Cannot contain numbers or special characters" }
 
   private 

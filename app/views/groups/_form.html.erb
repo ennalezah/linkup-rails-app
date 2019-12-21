@@ -1,21 +1,60 @@
+<p class="subtitle is-7">Fields marked with <span class="notice">*</span> are required</p><br>
+
 <%= simple_form_for group do |f| %>
-  <%= f.input :name,
-              required: true,
-              autofocus: true,
-              label: 'Group name' %>
-
-  <%= f.input :description, as: :text,
-              required: true,
-              placeholder: 'A brief intro about your group' %>
-
-  <%= f.input :city, required: true %>
-
-  <%= f.input_field :state,
-                    collection: states,
-                    required: true,
-                    prompt: 'State' %>
-
   <%= f.hidden_field :creator %>
-  
-  <%= f.submit %>
+
+  <div class="field">
+    <label class="label">Group name<span class="notice">*</span></label>
+    <div class="control">
+      <%= f.input :name,
+                  required: true,
+                  autofocus: true,
+                  label: false,
+                  wrapper: false,
+                  input_html: { class: "input" } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Description<span class="notice">*</span></label>
+    <div class="control">
+      <%= f.input :description,
+                  required: true,
+                  label: false,
+                  wrapper: false,
+                  placeholder: 'A brief intro about your group, and any other information you think is important for people to know before joining your group.',
+                  input_html: { class: "textarea" } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Where is your group based from?<span class="notice">*</span></label>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <%= f.input :city,
+                  required: true,
+                  label: false,
+                  placeholder: 'City',
+                  wrapper: false,
+                  input_html: { class: "input" } %>
+    </div>
+    <div class="control">
+      <span class="select">
+        <%= f.input_field :state,
+                      collection: states,
+                      required: true,
+                      label: false,
+                      prompt: 'State' %>
+      </span>     
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <%= f.submit (@group.new_record? ? 'Submit' : 'Update'), class:'button cta has-text-white has-text-weight-medium' %>
+      <%= link_to 'Cancel', groups_path, class:'button is-light is-link' %>
+    </div>
+  </div> 
 <% end %>
