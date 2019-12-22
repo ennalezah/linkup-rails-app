@@ -1,6 +1,6 @@
 module ApplicationHelper
   def count_users(resource)
-    pluralize(resource.users.count, 'group member')
+    pluralize(resource.users.count, 'Group member')
   end
 
   def city_state(resource)

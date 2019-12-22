@@ -23,6 +23,10 @@ body, html {
   padding: 60px 40px 50px;  
 }
 
+.footer {
+  background-color: transparent;
+}
+
 a, .alert-success  {
   color: #3D9AE2;
 }
@@ -64,7 +68,7 @@ a:hover, .navbar-item a:hover, .notice {
   margin: 0 10px 0 0; 
 }
 
-.fa-map-marker-alt, .fa-calendar-alt, .fa-user, .fa-user-friends {
+.fa-map-marker-alt, .fa-calendar-alt, .fa-user, .fa-user-friends, .fa-clock {
   margin: 0 5px 0 0;
 }
 

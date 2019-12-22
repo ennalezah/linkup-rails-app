@@ -1,29 +1,36 @@
-<section class="hero is-medium is-light">
-  <div class="hero-body memberships">
-    <div class="container">
-      <h1 class="title is-size-1-tablet has-text-weight-bold">
-        Memberships
-      </h1>
+<div class="page-block">
+  <h3 class="title is-3 has-text-weight-bold"><%= @event.name %></h3>
+  <p class="subtitle is-7">
+    Organized by <%= organizer_name(@event) %> from <%= hosting_group(@event) %>
+  </p><br>
+
+  <div class="columns is-mobile is-gapless is-size-6">      
+    <div class="column is-narrow">
+      <p><i class="far fa-calendar-alt notice"></i></p>
+      <p><i class="far fa-clock notice"></i></p>
+      <p><i class="fas fa-map-marker-alt notice"></i></p>
+    </div>
+
+    <div class="column">
+      <p><%= date(@event) %></p>
+      <p><%= start_end_time(@event) %></p>
+      <p><%= @event.location %>, <%= city_state(@event) %></p>
     </div>
   </div>
-</section>
 
-<div class="page-block">
-  <h3><%= @event.name %></h3>
-  <p><%= @event.details %></p>
-  <p><%= date(@event) %></p>
-  <p><%= start_end_time(@event) %></p>
-  <p><%= @event.location %> | <%= city_state(@event) %></p>
-  <p>Organizer: <%= organizer_name(@event) %></p>
+  <p><%= rsvp(@event) %></p>
 
   <hr>
 
-  <h3><%= pluralize(@users.count, 'Attendee')%></h3>
-  <% @users.each do |user| %>
-    <%= link_to user.name, user_path(user) %>
-  <% end %>
+  <h4 class="is-size-4 has-text-weight-medium">Details</h4>
+  <p><%= @event.details %></p>
 
-  <%= rsvp(@event) %>
+  <h3><%= pluralize(@users.count, 'Attendee')%></h3>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= link_to user.name, user_path(user) %></li>
+    <% end %>
+  </ul>
 
   <%= organizer_options(@event) %>
 </div>

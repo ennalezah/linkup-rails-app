@@ -1,7 +1,7 @@
 module EventsHelper
   def organizer_name(event)
     @user = User.find_by(id: event.organizer)
-    @user.name if @user
+    link_to @user.name, user_path(@user), class: 'has-text-weight-medium'
   end
 
   def is_organizer(event)
@@ -47,11 +47,16 @@ module EventsHelper
     if user_signed_in?
       @current_attendance = Attendance.find_by(user_id: current_user.id, event_id: event.id)
 
-      if @current_attendance || is_organizer(event)
-        "&nbsp;".html_safe
-      else 
+      # if @current_attendance || is_organizer(event)
+      #   "&nbsp;".html_safe
+      # else 
+      #   @attendance = Attendance.new(user_id: current_user.id, event_id: event.id)
+      #   (render 'attendances/form', attendance: @attendance)
+      # end
+
+      if !@current_attendance && !is_organizer(event)
         @attendance = Attendance.new(user_id: current_user.id, event_id: event.id)
-        "<br>".html_safe + (render 'attendances/form', attendance: @attendance)
+        (render 'attendances/form', attendance: @attendance)
       end
     end
   end

@@ -15,13 +15,21 @@
 
   <body>
 
-    <%= render 'shared/navbar' %>    
+    <%= render 'shared/navbar' %><br>    
 
     <div class="container content">
       <p class="alert alert-success has-text-weight-bold"><%= notice if notice%></p>
       <p class="alert alert-danger has-text-weight-bold"><%= alert if alert %></p>
       <%= yield %>
-    </div>
-  
+    </div>  
+    
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p class="has-text-weight-medium has-text-dark">
+          &copy; 2019 LinkUp by Hazel Anne Villareal
+        </p>
+      </div>
+    </footer>
   </body>
+
 </html>
