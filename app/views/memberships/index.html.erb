@@ -1,8 +1,20 @@
-<% if @groups.empty? %>
-  <h3>It doesn't look like you're a member of any groups yet.</h3>
-  <p>Visit the <%= link_to 'Explore Groups', groups_path %> page to find your crowd, and join them! You can also <%= link_to 'start a new group', new_group_path %>.</p>
-<% end %>
+<section class="hero is-medium is-light">
+  <div class="hero-body memberships">
+    <div class="container">
+      <h1 class="title is-size-1-tablet has-text-weight-bold">
+        Memberships
+      </h1>
+    </div>
+  </div>
+</section>
 
-<% @groups.each do |group| %>
-  <%= link_to group.name, group_path(group) %>
-<% end %>
+<div class="page-block">
+  <% if @groups.empty? %>
+    <h3>It doesn't look like you're a member of any groups yet.</h3>
+    <p>Visit our <%= link_to 'Explore Groups', groups_path %> page to find your crowd, and join them! You can also <%= link_to 'start a new group', new_group_path %>.</p>
+  <% end %>
+
+  <% @groups.each do |group| %>
+    <%= link_to group.name, group_path(group) %>
+  <% end %>
+</div>

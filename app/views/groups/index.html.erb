@@ -1,6 +1,14 @@
-<div class="page-block">
-  <h3 class="title is-3">Explore Groups</h3><br>
+<section class="hero is-medium is-light">
+  <div class="hero-body groups">
+    <div class="container">
+      <h1 class="title is-size-1-tablet has-text-weight-bold">
+        Explore Groups
+      </h1>
+    </div>
+  </div>
+</section>
 
+<div class="page-block">
   <%= @groups.each do |group| %>
     <h5 class="title is-5"><%= link_to group.name, group_path(group) %></h5>
     

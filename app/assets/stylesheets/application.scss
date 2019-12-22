@@ -9,7 +9,7 @@ body, html {
   margin: 0;
   height: 100%;
   background-color: #f8f8f8;
-  box-shadow: 0 10px 15px -10px rgba(10, 14, 32, 0.12);
+  background-image: url("swirl.png");
 }
 
 .container {
@@ -17,15 +17,10 @@ body, html {
 }
 
 .page-block {
-  box-shadow: 0 10px 15px -10px rgba(10, 14, 32, 0.12);
   background: #fff;
+  box-shadow: 0 10px 15px -10px rgba(10, 14, 32, 0.12);
   min-height: 75vh;
-  padding: 50px;
-}
-
-.form-block {
-  background: rgba(255,255,255,0.90);
-  min-height: 55vh;
+  padding: 60px 40px 50px;  
 }
 
 a, .alert-success  {
@@ -36,6 +31,13 @@ a:hover, .navbar-item a:hover, .notice {
   color: #ff595c;
 }
 
+.content .title, .content h1, .content h2, .content h3, .hero.is-light .title {
+  color: #1C2657;
+}
+
+.content p, .content h4, .content h5, .content h6 {
+  color: #333;
+}
 
 /*** BUTTONS ***/
 
@@ -81,6 +83,11 @@ a:hover, .navbar-item a:hover, .notice {
 }
 
 /*** FORM ***/
+.form-block {
+  background: rgba(255,255,255,0.90);
+  min-height: 55vh;
+}
+
 .input {
   width: 100%;
 }
@@ -88,15 +95,44 @@ a:hover, .navbar-item a:hover, .notice {
 .error, .error-notification, .alert-danger  {
   color:  #ff595c;
 }
+
 /*** HERO IMAGES ***/
 .home {
-  background: linear-gradient(0deg,rgba(255,255,255,0.50),rgba(255,255,255,0.50)), url(home.png) no-repeat center / cover;
+  background: linear-gradient(0deg,rgba(255,255,255,0.35),rgba(255,255,255,0.35)), url(home.png) no-repeat center / cover;
+  // background: url(home.png) no-repeat center / cover;
 }
 
 .signup {
-  background: linear-gradient(0deg,rgba(255,255,255,0.50),rgba(255,255,255,0.50)), url(signup.png) no-repeat 35% 50% / cover;
+  background: linear-gradient(0deg,rgba(255,255,255,0.35),rgba(255,255,255,0.35)), url(signup.png) no-repeat 35% 50% / cover;
+  // background: url(signup.png) no-repeat 35% 50% / cover;
 }
 
 .login {
-  background: linear-gradient(0deg,rgba(255,255,255,0.50),rgba(255,255,255,0.50)), url(login.png) no-repeat center / cover;
+  background: linear-gradient(0deg,rgba(255,255,255,0.35),rgba(255,255,255,0.35)), url(login.png) no-repeat center / cover;
+  // background: url(login.png) no-repeat center / cover;
+}
+
+.groups {
+  background: linear-gradient(0deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(groups.png) no-repeat 50% 40% / cover;
+  // background: url(groups.png) no-repeat 50% 35% / cover;
+}
+
+.events {
+  background: linear-gradient(0deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(events.png) no-repeat center / cover;
+  // background: url(events.png) no-repeat 50% 35% / cover;
+}
+
+.memberships {
+  background: linear-gradient(0deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(memberships.png) no-repeat center / cover;
+  // background: url(memberships.png) no-repeat 50% 35% / cover;
+}
+
+.new-group {
+  background: linear-gradient(0deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(new-group.png) no-repeat center / cover;
+  // background: url(new-group.png) no-repeat 50% 35% / cover;
+}
+
+.new-event {
+  background: linear-gradient(0deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(new-event.png) no-repeat 50% 20% / cover;
+  // background: url(new-event.png) no-repeat 50% 35% / cover;
 }

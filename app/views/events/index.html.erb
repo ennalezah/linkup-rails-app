@@ -1,6 +1,14 @@
-<div class="page-block">
-  <h3 class="title is-3">Find Events</h3><br>
+<section class="hero is-medium is-light">
+  <div class="hero-body events">
+    <div class="container">
+      <h1 class="title is-size-1-tablet has-text-weight-bold">
+        Find Events
+      </h1>
+    </div>
+  </div>
+</section>
 
+<div class="page-block">
   <%= @events.each do |event| %>    
     <h5 class="title is-5"><%= link_to event.name, event_path(event) %></h5>
 
