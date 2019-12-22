@@ -28,13 +28,16 @@ body, html {
   min-height: 55vh;
 }
 
-a {
+a, .alert-success  {
   color: #3D9AE2;
 }
 
 a:hover, .navbar-item a:hover, .notice {
   color: #ff595c;
 }
+
+
+/*** BUTTONS ***/
 
 .cta {
   background: #3D9AE2;
@@ -53,11 +56,13 @@ a:hover, .navbar-item a:hover, .notice {
   background-color: transparent;
 }
 
+/*** ICONS ***/
+
 .google-icon {
   margin: 0 10px 0 0; 
 }
 
-.fa-map-marker-alt, .fa-user-friends {
+.fa-map-marker-alt, .fa-calendar-alt, .fa-user, .fa-user-friends {
   margin: 0 5px 0 0;
 }
 
@@ -80,6 +85,9 @@ a:hover, .navbar-item a:hover, .notice {
   width: 100%;
 }
 
+.error, .error-notification, .alert-danger  {
+  color:  #ff595c;
+}
 /*** HERO IMAGES ***/
 .home {
   background: linear-gradient(0deg,rgba(255,255,255,0.50),rgba(255,255,255,0.50)), url(home.png) no-repeat center / cover;

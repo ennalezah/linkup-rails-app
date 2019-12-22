@@ -1,14 +1,13 @@
 <section class="hero is-light is-bold">
   <div class="hero-body signup">
     <div class="container">
-      <div class="columns is-vcentered">
-
+      <div class="columns">
         <div class="column is-one-third form-block">
           <h4 class="title is-4 is-spaced has-text-bold">Create your account</h4>
-          <p class="subtitle is-7">Fields marked with <span class="notice">*</span> are required</p>
+          <p class="subtitle is-7">Fields marked with <span class="notice">*</span> are required</p><br>
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
-            <%= f.error_notification %>
+            <div class="field error has-text-weight-bold"><%= f.error_notification %></div>
             
             <div class="field">
               <label class="label">Name<span class="notice">*</span></label>

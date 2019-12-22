@@ -1,24 +1,20 @@
 <div class="page-block">
-  <h3 class="title is-3 has-text-weight-semibold">Find Events</h3><br>
+  <h3 class="title is-3">Find Events</h3><br>
 
   <%= @events.each do |event| %>    
-    <h5 class="title is-5 has-text-weight-bold"><%= link_to event.name, event_path(event) %></h5>
+    <h5 class="title is-5"><%= link_to event.name, event_path(event) %></h5>
 
-    <div class="columns is-gapless subtitle is-size-7 has-text-weight-medium">      
+    <div class="columns is-mobile is-gapless subtitle is-size-7">      
       <div class="column is-narrow">
-        <p>
-          <i class="fas fa-user-friends notice"></i><br>
-          <i class="far fa-calendar-alt notice"></i><br>
-          <i class="fas fa-map-marker-alt notice"></i>
-        </p>
+        <i class="fas fa-user-friends notice"></i><br>
+        <i class="far fa-calendar-alt notice"></i><br>
+        <i class="fas fa-map-marker-alt notice"></i>
       </div>
 
       <div class="column">
-        <p>
-          Hosted by <%= hosting_group(event) %><br>
-          <%= date(event) %> at <%= start_end_time(event) %><br>
-          <%= event.location %> | <%= city_state(event) %><br>
-        </p>        
+        Hosted by <%= hosting_group(event) %><br>
+        <%= date(event) %> at <%= start_end_time(event) %><br>
+        <%= event.location %> | <%= city_state(event) %>
       </div>
     </div>
     <hr>

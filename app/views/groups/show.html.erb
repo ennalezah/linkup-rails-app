@@ -1,21 +1,17 @@
 <div class="page-block">
   <h3 class="title is-3 has-text-weight-bold"><%= @group.name %></h3>
 
-  <div class="columns is-gapless subtitle is-size-6">      
+  <div class="columns is-mobile is-gapless subtitle is-size-7">      
     <div class="column is-narrow">
-      <p>
-        <i class="fas fa-map-marker-alt notice"></i><br>
-        <i class="fas fa-user-friends notice"></i><br>
-        <i class="fas fa-user notice"></i>
-      </p>
+      <i class="fas fa-map-marker-alt notice"></i><br>
+      <i class="fas fa-user-friends notice"></i><br>
+      <i class="fas fa-user notice"></i>
     </div>
 
     <div class="column">
-      <p>
-        <%= city_state(@group) %><br>
-        <%= count_users(@group) %><br>
-        Created by <%= creator_name(@group) %>
-      </p>        
+      <%= city_state(@group) %><br>
+      <%= count_users(@group) %><br>
+      Created by <%= creator_name(@group) %>    
     </div>
   </div>
 

@@ -2,97 +2,97 @@
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-      <div class="field">
-        <label class="label">Name<span class="notice">*</span></label>
-        <div class="control">
-          <%= f.input :name,
-                      required: true,
-                      autofocus: true,
-                      label: false,
-                      wrapper: false,
-                      input_html: { class: "input" } %>
-        </div>
+    <div class="field error has-text-weight-bold"><%= f.error_notification %></div>
+    <div class="field">
+      <label class="label">Name<span class="notice">*</span></label>
+      <div class="control">
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    label: false,
+                    wrapper: false,
+                    input_html: { class: "input" } %>
       </div>
+    </div>
 
-      <div class="field">
-        <label class="label">Your location</label>
+    <div class="field">
+      <label class="label">Your location</label>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <%= f.input :city,
+                    required: false,
+                    label: false,
+                    placeholder: 'City',
+                    wrapper: false,
+                    input_html: { class: "input" } %>
       </div>
-      <div class="field is-grouped">
-        <div class="control">
-          <%= f.input :city,
-                      required: false,
-                      label: false,
-                      placeholder: 'City',
-                      wrapper: false,
-                      input_html: { class: "input" } %>
-        </div>
-        <div class="control">
-          <span class="select">
-            <%= f.input_field :state,
-                          collection: states,
-                          required: false,
-                          label: false,
-                          prompt: 'State' %>
-          </span>     
-        </div>
+      <div class="control">
+        <span class="select">
+          <%= f.input_field :state,
+                        collection: states,
+                        required: false,
+                        label: false,
+                        prompt: 'State' %>
+        </span>     
       </div>
+    </div>
 
-      <div class="field">
-        <label class="label">Email<span class="notice">*</span></label>
-        <div class="control">
-          <%= f.input :email,
-                      required: true,
-                      label: false,
-                      wrapper: false,
-                      input_html: { class: "input" } %>
-        </div>
+    <div class="field">
+      <label class="label">Email<span class="notice">*</span></label>
+      <div class="control">
+        <%= f.input :email,
+                    required: true,
+                    label: false,
+                    wrapper: false,
+                    input_html: { class: "input" } %>
       </div>
+    </div>
 
-      <!-- <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-      <% end %> -->
+    <!-- <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %> -->
 
-      <label class="label">Update your password</label>
-      <p class="help">Leave these fields blank if you don't want to change it</p>
-      <div class="field is-grouped">
-        <div class="control">
-          <%= f.input :password,
-                      required: false,
-                      label: false,
-                      wrapper: false,
-                      placeholder: 'New password',
-                      input_html: { autocomplete: "new-password", class: "input" } %>
-        </div>
-        <div class="control">
-          <%= f.input :password_confirmation,
-                      required: false,
-                      label: false,
-                      wrapper: false,
-                      placeholder: 'Confirm new password',
-                      input_html: { autocomplete: "new-password", class: "input" } %>
-        </div>      
+    <label class="label">Update your password</label>
+    <p class="help">Leave these fields blank if you don't want to change it</p>
+    <div class="field is-grouped">
+      <div class="control">
+        <%= f.input :password,
+                    required: false,
+                    label: false,
+                    wrapper: false,
+                    placeholder: 'New password',
+                    input_html: { autocomplete: "new-password", class: "input" } %>
       </div>
+      <div class="control">
+        <%= f.input :password_confirmation,
+                    required: false,
+                    label: false,
+                    wrapper: false,
+                    placeholder: 'Confirm new password',
+                    input_html: { autocomplete: "new-password", class: "input" } %>
+      </div>      
+    </div>
 
-      <div class="field">
-        <label class="label">Confirm your changes<span class="notice">*</span></label>
-        <p class="help">Enter your current password to save your changes</p>
-        <div class="control">
-          <%= f.input :current_password,
-                      required: true,
-                      label: false,
-                      wrapper: false,
-                      placeholder: 'Current password',
-                      input_html: { autocomplete: "current-password", class: "input" } %>
-        </div>
+    <div class="field">
+      <label class="label">Confirm your changes<span class="notice">*</span></label>
+      <p class="help">Enter your current password to save your changes</p>
+      <div class="control">
+        <%= f.input :current_password,
+                    required: true,
+                    label: false,
+                    wrapper: false,
+                    placeholder: 'Current password',
+                    input_html: { autocomplete: "current-password", class: "input" } %>
       </div>
+    </div>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <%= f.button :submit, "Update", class:'button cta has-text-white has-text-weight-medium' %>
-          <%= link_to 'Return to your profile', :back, class:'button is-light is-link' %>
-        </div>
-      </div> 
+    <div class="field is-grouped">
+      <div class="control">
+        <%= f.button :submit, "Update", class:'button cta has-text-white has-text-weight-medium' %>
+        <%= link_to 'Return to your profile', :back, class:'button is-light is-link' %>
+      </div>
+    </div> 
   <% end %>
 
   <hr>
