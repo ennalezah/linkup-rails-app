@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
 
   ## Validations
-  validates_presence_of :name, :email, :password, :password_confirmation
+  validates_presence_of :name, :email
   validates_uniqueness_of :email, message: 'an account with this email has already been created'
 
   private
