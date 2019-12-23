@@ -3,10 +3,6 @@ Rails.application.routes.draw do
   resources :events
   resources :attendances
 
-  # resources :users, only: [:show] do
-  #   resources :events, only: [:index]
-  # end 
-
   resources :users, only: [:show]
 
   resources :groups do 

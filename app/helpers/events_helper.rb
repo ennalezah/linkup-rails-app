@@ -57,10 +57,6 @@ module EventsHelper
     end
   end
 
-  def events_index_title
-    params[:user_id] ? "Your Events" : "Find Events"
-  end
-
   def count_attendees(event)
     pluralize(event.users.count, 'Attendee')
   end
