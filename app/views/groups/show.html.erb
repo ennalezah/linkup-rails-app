@@ -35,7 +35,7 @@
   <h4 class="is-size-4 has-text-weight-medium">Our Members</h4>
   <ul>
     <%= @users.each do |user| %>
-      <li><%= link_to user.name, user_path(user) %></li>
+      <li><%= link_to first_name(user), user_path(user) %></li>
     <% end %>
   </ul>
   <br>

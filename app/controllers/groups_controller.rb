@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new(creator: current_user.name)
+    @group = Group.new(creator: current_user.id)
   end
 
   def create 
@@ -58,7 +58,7 @@ class GroupsController < ApplicationController
     end
 
     def require_creator
-      if user_signed_in? && (@group.creator != current_user.name)
+      if user_signed_in? && (@group.creator != current_user.id)
         flash[:alert] = "You don't have permission to view that page"
         redirect_to root_path
       end

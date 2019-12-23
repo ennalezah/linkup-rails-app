@@ -9,12 +9,12 @@ module GroupsHelper
   end
 
   def is_creator(group)
-    true if user_signed_in? && (group.creator == current_user.name)
+    true if user_signed_in? && (group.creator == current_user.id)
   end
 
   def creator_name(group)
-   @user = User.find_by(name: group.creator)
-   link_to @user.name, user_path(@user), class: 'has-text-weight-medium'
+   @user = User.find_by(id: group.creator)
+   (link_to first_name(@user), user_path(@user), class: 'has-text-weight-medium') if @user
   end
 
   # def become_member(group)

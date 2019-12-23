@@ -1,7 +1,7 @@
 module EventsHelper
   def organizer_name(event)
     @user = User.find_by(id: event.organizer)
-    link_to @user.name, user_path(@user), class: 'has-text-weight-medium'
+    link_to first_name(@user), user_path(@user), class: 'has-text-weight-medium'
   end
 
   def is_organizer(event)
