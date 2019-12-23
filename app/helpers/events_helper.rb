@@ -43,17 +43,17 @@ module EventsHelper
     if user_signed_in?
       @current_attendance = Attendance.find_by(user_id: current_user.id, event_id: event.id)
 
+      if !@current_attendance && !is_organizer(event) && !event.date.past?
+        @attendance = Attendance.new(user_id: current_user.id, event_id: event.id)
+        (render 'attendances/form', attendance: @attendance)
+      end
+
       # if @current_attendance || is_organizer(event)
       #   "&nbsp;".html_safe
       # else 
       #   @attendance = Attendance.new(user_id: current_user.id, event_id: event.id)
       #   (render 'attendances/form', attendance: @attendance)
       # end
-
-      if !@current_attendance && !is_organizer(event)
-        @attendance = Attendance.new(user_id: current_user.id, event_id: event.id)
-        (render 'attendances/form', attendance: @attendance)
-      end
     end
   end
 

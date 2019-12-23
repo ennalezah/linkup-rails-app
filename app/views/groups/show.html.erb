@@ -22,12 +22,14 @@
   <br>
 
   <h4 class="is-size-4 has-text-weight-medium is-italic">Our Events</h4> 
+  <ul>
   <% @events.each do |event| %>
-    <p>
-      <%= link_to event.name, group_event_path(@group, event), class: "is-size-5 has-text-weight-bold" %><br>
-      <span class="has-text-weight-medium"><%= date(event) %> at <%= start_end_time(event) %></span>
-    </p>    
+    <li>
+      <%= link_to event.name, group_event_path(@group, event), class: "has-text-weight-bold" %><br>
+      <%= date(event) %> at <%= start_time(event) %>
+    </li>    
   <% end %>
+  </ul>
   <br>
 
   <h4 class="is-size-4 has-text-weight-medium is-italic">Our Members</h4>
