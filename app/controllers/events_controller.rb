@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    params[:user_id] ? (@events = current_user.events) : (@events = Event.all)
+    params[:user_id] ? (@events = current_user.events) : (@events = Event.all.upcoming)
   end
 
   def show 
@@ -25,7 +25,6 @@ class EventsController < ApplicationController
       @event.users << current_user
       redirect_to event_path(@event)
     else
-      flash[:alert] = "There were some errors on your form"
       render :new
     end
   end
@@ -37,10 +36,8 @@ class EventsController < ApplicationController
     @event.update(event_params)
 
     if @event.save
-      flash[:notice] = "You've successfully updated your event"
       redirect_to event_path(@event)
     else
-      flash[:alert] = "There were some errors updating your event"
       render :edit
     end
   end

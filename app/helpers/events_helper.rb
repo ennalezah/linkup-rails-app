@@ -21,10 +21,6 @@ module EventsHelper
     link_to @group.name, group_path(@group), class: 'has-text-weight-medium'
   end
 
-  def upcoming(event)
-    event.date.future?
-  end
-
   def date(event)
     event.date.strftime("%A, %B %e, %Y")
   end
@@ -60,4 +56,13 @@ module EventsHelper
       end
     end
   end
+
+  def events_index_title
+    params[:user_id] ? "Your Events" : "Find Events"
+  end
+
+  def count_attendees(event)
+    pluralize(event.users.count, 'Attendee')
+  end
+
 end

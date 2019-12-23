@@ -17,17 +17,13 @@ module GroupsHelper
    (link_to first_name(@user), user_path(@user), class: 'has-text-weight-medium') if @user
   end
 
-  # def become_member(group)
-  #   @current_membership = Membership.find_by(user_id: current_user.id, group_id: group.id)
-
-  #   if @current_membership
-  #     "<hr>".html_safe +
-  #     (link_to 'Leave group', membership_path(@current_membership), method: :delete, data: { confirm: "Are you sure you want to leave #{group.name}?" }, class: 'button is-small is-danger is-light')
-  #   else 
-  #     @membership = Membership.new(user_id: current_user.id, group_id: group.id)
-  #     "<h3>Join Us</h3><br>".html_safe + (render 'memberships/form', membership: @membership)
-  #   end
-  # end
+  def role(group)
+    if user.id == user.group.creator
+      "Creator"
+    else
+      "Member"
+    end
+  end
 
   def become_member(group)
     if user_signed_in?
@@ -41,4 +37,16 @@ module GroupsHelper
       end
     end
   end
+  
+  # def become_member(group)
+  #   @current_membership = Membership.find_by(user_id: current_user.id, group_id: group.id)
+
+  #   if @current_membership
+  #     "<hr>".html_safe +
+  #     (link_to 'Leave group', membership_path(@current_membership), method: :delete, data: { confirm: "Are you sure you want to leave #{group.name}?" }, class: 'button is-small is-danger is-light')
+  #   else 
+  #     @membership = Membership.new(user_id: current_user.id, group_id: group.id)
+  #     "<h3>Join Us</h3><br>".html_safe + (render 'memberships/form', membership: @membership)
+  #   end
+  # end
 end

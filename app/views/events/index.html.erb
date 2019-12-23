@@ -2,7 +2,7 @@
   <div class="hero-body events">
     <div class="container">
       <h1 class="title is-size-1-tablet has-text-weight-bold">
-        Find Events
+        <%= events_index_title %>
       </h1>
     </div>
   </div>
@@ -10,19 +10,18 @@
 
 <div class="page-block">
   <%= @events.each do |event| %>    
-    <h5 class="title is-5"><%= link_to event.name, event_path(event) %></h5>
+    <p class="has-text-weight-medium"><%= date(event) %> @ <%= start_time(event) %></p>
+    <h4 class="title is-4"><%= link_to event.name, event_path(event) %></h4>
 
     <div class="columns is-mobile is-gapless subtitle is-size-7">      
       <div class="column is-narrow">
         <i class="fas fa-user-friends notice"></i><br>
-        <i class="far fa-calendar-alt notice"></i><br>
         <i class="fas fa-map-marker-alt notice"></i>
       </div>
 
       <div class="column">
         Hosted by <%= hosting_group(event) %><br>
-        <%= date(event) %> at <%= start_end_time(event) %><br>
-        <%= event.location %> | <%= city_state(event) %>
+        <%= event.location %>, <%= city_state(event) %>
       </div>
     </div>
     <hr>

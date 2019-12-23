@@ -23,7 +23,6 @@ class GroupsController < ApplicationController
       @group.users << current_user
       redirect_to group_path(@group)
     else
-      flash[:alert] = "There were some errors on your form. Review the messages below:"
       render :new
     end
   end
@@ -37,7 +36,6 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to group_path(@group)
     else
-      flash[:alert] = "There were some errors updating your group"
       render :edit
     end
   end

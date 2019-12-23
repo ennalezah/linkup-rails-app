@@ -17,22 +17,20 @@
 
   <hr>
 
-  <h4 class="is-size-4 has-text-weight-medium">What We're About</h4>
+  <h4 class="is-size-4 has-text-weight-medium is-italic">What We're About</h4>
   <p><%= @group.description %></p>
   <br>
 
-  <h4 class="is-size-4 has-text-weight-medium">Upcoming Events</h4>  
+  <h4 class="is-size-4 has-text-weight-medium is-italic">Our Events</h4> 
   <% @events.each do |event| %>
-    <% if upcoming(event) %>
-      <p>
-        <%= link_to event.name, group_event_path(@group, event), class: "has-text-weight-bold" %><br>
-        <%= date(event) %> at <%= start_end_time(event) %>
-      </p>
-    <% end %>    
+    <p>
+      <%= link_to event.name, group_event_path(@group, event), class: "is-size-5 has-text-weight-bold" %><br>
+      <span class="has-text-weight-medium"><%= date(event) %> at <%= start_end_time(event) %></span>
+    </p>    
   <% end %>
   <br>
 
-  <h4 class="is-size-4 has-text-weight-medium">Our Members</h4>
+  <h4 class="is-size-4 has-text-weight-medium is-italic">Our Members</h4>
   <ul>
     <%= @users.each do |user| %>
       <li><%= link_to first_name(user), user_path(user) %></li>

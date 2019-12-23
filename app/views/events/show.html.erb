@@ -22,10 +22,10 @@
 
   <hr>
 
-  <h4 class="is-size-4 has-text-weight-medium">Details</h4>
-  <p><%= @event.details %></p>
+  <h4 class="is-size-4 has-text-weight-medium is-italic">Details</h4>
+  <p><%= @event.details %></p><br>
 
-  <h3><%= pluralize(@users.count, 'Attendee')%></h3>
+  <h4 class="is-size-4 has-text-weight-medium is-italic"><%= count_attendees(@event) %></h4>
   <ul>
     <% @users.each do |user| %>
       <li><%= link_to first_name(user), user_path(user) %></li>

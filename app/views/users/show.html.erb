@@ -1,4 +1,23 @@
 <div class="page-block">
-  <h3><%= @user.name %></h3>
-  <p>Location: <%= @user.city %>, <%= @user.state %></p>
+  <h1 class="title is-1 is-spaced has-text-weight-bold"><%= @user.name %></h1>
+  <p class="subtitle is-6"><strong>Location:</strong> <%= city_state(@user) %></p>
+  <hr>
+
+  <h4 class="is-size-4 has-text-weight-medium">Member of <%= count_groups(@user) %></h4>
+  <ul>
+    <% @groups.each do |group| %>
+      <li><%= link_to group.name, group_path(group), class: "has-text-weight-semibold" %> <span class="is-size-7">(<%= role(@user, group) %>)</span><br>
+      </li>
+    <% end%>
+  </ul>
+  <br>
+
+  <h4 class="is-size-4 has-text-weight-medium">Attended <%= count_events(@user) %></h4>
+  <ul>
+    <% @events.each do |event| %>
+      <li><%= link_to event.name, event_path(event), class: "has-text-weight-semibold" %> <br>
+      </li>
+    <% end%>
+  </ul>
+  
 </div>
