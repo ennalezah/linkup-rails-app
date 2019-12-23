@@ -33,7 +33,7 @@ module GroupsHelper
         "&nbsp;".html_safe
       else 
         @membership = Membership.new(user_id: current_user.id, group_id: group.id)
-        "<h4 class='title is-4 has-text-weight-medium'>Join Us</h4>".html_safe + (render 'memberships/form', membership: @membership)
+        "<h4 class='title is-4 has-text-weight-medium is-italic'>Join Us</h4>".html_safe + (render 'memberships/form', membership: @membership)
       end
     end
   end

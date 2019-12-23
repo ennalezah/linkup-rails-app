@@ -7,7 +7,7 @@
         <div class="control">
           <span class="select">
             <%= f.input_field :group_id,
-                        collection: Group.all,
+                        collection: current_user.groups,
                         required: true,
                         label: false,
                         prompt: 'Select one' %>
