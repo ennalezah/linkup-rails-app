@@ -13,13 +13,7 @@ class Event < ApplicationRecord
 
 
   ## Validations
-  validates_presence_of :name, :details, :date, :start_time, :end_time, :location, :city, :state
+  validates_presence_of :name, :details, :date, :start_time, :end_time, :location, :city, :state, :organizer, :group_id
   before_validation :make_city_titlecase
   # validates :city, format: { with: /[A-Za-z\-\'\.]+/x, message: "Cannot contain numbers or special characters" }
-
-  private 
-
-    def make_city_titlecase
-      self.city = self.city.titlecase
-    end
 end

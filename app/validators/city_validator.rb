@@ -1,4 +1,4 @@
-class CityValidator < ActiveModel::Validator
+class CityValidator < ActiveModel::EachValidator
   def validate(record)
     city = record.city.split
 

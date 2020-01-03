@@ -6,11 +6,12 @@
         <label class="label">Hosting group<span class="notice">*</span></label>
         <div class="control">
           <span class="select">
-            <%= f.input_field :group_id,
+            <%= f.input_field :group,
                         collection: current_user.groups,
                         required: true,
                         label: false,
                         prompt: 'Select one' %>
+            <%= f.error :group_id %>
           </span>     
         </div>
       </div>
@@ -27,6 +28,7 @@
                         label: false,
                         wrapper: false,
                         prompt: 'Select one' %>
+              <%= f.error :organizer %>
           </span>     
         </div>
       </div>  
@@ -55,6 +57,7 @@
                   required: true,
                   label: false,
                   wrapper: false,
+                  placeholder: "Add any info here about your event that is important for attendees to know",
                   input_html: { class: "textarea" } %>
     </div>
   </div>
@@ -62,12 +65,13 @@
   <div class="columns">
     <div class="column"> 
       <div class="field">
-        <label class="label">Address or location name<span class="notice">*</span></label>
+        <label class="label"><span class="notice">*</span></label>
         <div class="control">
           <%= f.input :location,
                       required: true,
                       label: false,
                       wrapper: false,
+                      placeholder: "Address or location name",
                       input_html: { class: "input" } %>
         </div>
       </div>
@@ -75,12 +79,13 @@
 
     <div class="column">
       <div class="field">
-        <label class="label">City<span class="notice">*</span></label>
+        <label class="label"><span class="notice">*</span></label>
         <div class="control">
           <%= f.input :city,
                       required: true,
                       label: false,
                       wrapper: false,
+                      placeholder: "City",
                       input_html: { class: "input" } %>
         </div>
       </div>  
@@ -88,14 +93,15 @@
 
     <div class="column">
       <div class="field">
-        <label class="label">State<span class="notice">*</span></label>
+        <label class="label"><span class="notice">*</span></label>
         <div class="control">
           <span class="select">
             <%= f.input_field :state,
                           collection: states,
                           required: true,
                           label: false,
-                          prompt: '' %>
+                          prompt: 'State' %>
+            <%= f.error :state %>
           </span>     
         </div>
       </div>
@@ -112,6 +118,7 @@
                       label: false,
                       wrapper: false,
                       input_html: { class: "date select "} %>
+          <%= f.error :date %>
         </div>
       </div>
     </div>
@@ -125,6 +132,7 @@
                       label: false,
                       wrapper: false,
                       input_html: { class: "time select"} %>
+          <%= f.error :start_time %>
         </div>
       </div>  
     </div>
@@ -138,6 +146,7 @@
                       label: false,
                       wrapper: false,
                       input_html: { class: "time select"} %>
+          <%= f.error :end_time %>
         </div>
       </div>
     </div>  

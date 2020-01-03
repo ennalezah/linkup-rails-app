@@ -46,7 +46,9 @@
                       collection: states,
                       required: true,
                       label: false,
-                      prompt: 'State' %>
+                      prompt: 'State',
+                      input_html: { class: "input" } %>
+        <%= f.error :state %>
       </span>     
     </div>
   </div>
