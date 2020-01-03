@@ -1,5 +1,5 @@
 class AttendancesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
     @attendance = Attendance.new(attendance_params)

@@ -1,9 +1,9 @@
 class MembershipsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy]
 
-  def index
-    # @groups = current_user.groups
-  end
+  # def index
+  #   @groups = current_user.groups
+  # end
 
   def create
     @membership = Membership.new(membership_params)

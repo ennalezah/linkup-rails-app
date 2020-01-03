@@ -1,7 +1,7 @@
 Rails.application.routes.draw do  
-  resources :memberships
+  resources :memberships, only: [:create, :destroy]
   resources :events
-  resources :attendances
+  resources :attendances, only: [:create, :destroy]
 
   resources :users, only: [:show]
 
