@@ -92,8 +92,12 @@ a:hover, .navbar-item a:hover, .notice {
   width: 100%;
 }
 
-.error, .error-notification, .alert-danger  {
-  color:  #ff595c;
+.error, .error_notification, .alert-danger  {
+  color:  #e23d47;
+}
+
+.error {
+  font-size: .75rem;
 }
 
 /*** HERO IMAGES ***/

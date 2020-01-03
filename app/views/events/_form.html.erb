@@ -6,7 +6,7 @@
         <label class="label">Hosting group<span class="notice">*</span></label>
         <div class="control">
           <span class="select">
-            <%= f.input_field :group,
+            <%= f.input_field :group_id,
                         collection: current_user.groups,
                         required: true,
                         label: false,
@@ -117,7 +117,7 @@
                       required: true,
                       label: false,
                       wrapper: false,
-                      input_html: { class: "date select "} %>
+                      input_html: { class: "date select"} %>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ en:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the errors below:"
+      default_message: '<i class="fas fa-exclamation-circle is-size-6"></i> Please review the errors below:'
     # Examples
     # labels:
     #   defaults:

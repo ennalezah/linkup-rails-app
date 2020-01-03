@@ -7,7 +7,7 @@
           <p class="subtitle is-7 is-invisible">Fields marked with <span class="notice">*</span> are required</p>
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="field">
+            <div class="field"> 
               <label class="label">Email<span class="notice">*</span></label>
               <div class="control">
                 <%= f.input :email,
