@@ -15,6 +15,10 @@ class Event < ApplicationRecord
   scope :upcoming, lambda { where('date >= ?', Time.now) } # lambda reavluates scope each time it's called
   scope :past, lambda { where('date < ?', Time.now) }
 
+  def add_organizer_to_attendees(current_user)
+    self.users << current_user if current_user.email
+  end
+
   private 
 
   def date_cannot_be_in_the_past
@@ -22,4 +26,6 @@ class Event < ApplicationRecord
       errors.add(:date, "<br>must select a future date".html_safe)
     end
   end
+
+  
 end

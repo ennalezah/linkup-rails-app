@@ -20,7 +20,8 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      @group.users << current_user
+      # @group.users << current_user
+      add_creator_to_members(current_user)
       redirect_to group_path(@group)
     else
       render :new

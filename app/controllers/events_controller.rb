@@ -22,7 +22,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      @event.users << current_user
+      # @event.users << current_user
+      @event.add_organizer_to_attendees(current_user)
       redirect_to event_path(@event)
     else
       render :new
